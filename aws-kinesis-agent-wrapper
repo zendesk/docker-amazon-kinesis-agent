@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+if [ -n "$AWS_IAM_ROLE" ]; then
+  instance_metadata=$(curl -sS http://169.254.169.254/latest/meta-data/iam/security-credentials/${AWS_IAM_ROLE})
+  AWS_ACCESS_KEY_ID=$(echo $instance_metadata | jq .AccessKeyId)
+  AWS_SECRET_ACCESS_KEY=$(echo $instance_metadata | jq .SecretAccessKey)
+  AWS_DEFAULT_REGION=$(curl -sS http://169.254.169.254/latest/meta-data/placement/availability-zone | sed -e 's/[a-z]$//')
+fi
+
+exec /usr/bin/start-aws-kinesis-agent "$@"
