@@ -6,8 +6,8 @@ if [ -n "$AWS_IAM_ROLE" ]; then
     echo "FATAL: Couldn't obtain credentials for role ${AWS_IAM_ROLE} from EC2 metadata." >&2
     exit 1
   fi
-  AWS_ACCESS_KEY_ID=$(echo $creds | jq .AccessKeyId)
-  AWS_SECRET_ACCESS_KEY=$(echo $creds | jq .SecretAccessKey)
+  AWS_ACCESS_KEY_ID=$(echo $creds | jq -r .AccessKeyId)
+  AWS_SECRET_ACCESS_KEY=$(echo $creds | jq -r .SecretAccessKey)
   AWS_DEFAULT_REGION=$(curl -sSf http://169.254.169.254/latest/meta-data/placement/availability-zone | sed -e 's/[a-z]$//')
 fi
 
