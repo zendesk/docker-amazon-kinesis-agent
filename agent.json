@@ -1,8 +1,7 @@
 {
   "cloudwatch.emitMetrics": true,
   "kinesis.endpoint": "",
-  "firehose.endpoint": "",
-
+  "cloudwatch.endpoint": "",
   "flows": [
     {
       "filePattern": "/tmp/app.log*",
