@@ -7,7 +7,7 @@ More information about the agent can be found
 
 How to use
 ==========
-Use this image as the `FROM` value in your Dockerfile.  Then install a
+Use this image as the `FROM` value in your `Dockerfile`.  Then install a
 customized configuration file into `/etc/aws-kinesis/agent.json`.
 
 The configuration file format is documented
