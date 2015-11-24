@@ -3,7 +3,7 @@ Introduction
 This repository contains a Docker image source for the AWS Kinesis Streaming Agent.
 
 More information about the agent can be found
-(here)[http://docs.aws.amazon.com/kinesis/latest/dev/writing-with-agents.html].
+[here](http://docs.aws.amazon.com/kinesis/latest/dev/writing-with-agents.html).
 
 How to use
 ==========
@@ -11,7 +11,7 @@ Use this image as the `FROM` value in your Dockerfile.  Then install a
 customized configuration file into `/etc/aws-kinesis/agent.json`.
 
 The configuration file format is documented
-(here)[http://docs.aws.amazon.com/kinesis/latest/dev/writing-with-agents.html#agent-config-list].
+[here](http://docs.aws.amazon.com/kinesis/latest/dev/writing-with-agents.html#agent-config-list).
 
 **Note**: Do not fill in the values for `awsAccessKeyId` and
 `awsSecretAccessKey` in your configuration file.  This could result in your
@@ -22,7 +22,7 @@ when launching your container.
 Environment variables
 =====================
 The following environment variables are discussed
-(here)[http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-environment]:
+[here](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-environment):
 
 * `AWS_ACCESS_KEY_ID`
 * `AWS_SECRET_ACCESS_KEY`
