@@ -8,10 +8,6 @@ ENV JAVA_VERSION=8 \
     JAVA_BUILD=17 \
     JAVA_START_HEAP=32m \
     JAVA_MAX_HEAP=512m \
-    AWS_ACCESS_KEY_ID="" \
-    AWS_SECRET_ACCESS_KEY="" \
-    AWS_DEFAULT_REGION="" \
-    AWS_IAM_ROLE="" \
     LOG_LEVEL="INFO"
 
 RUN curl -LO -H "Cookie: oraclelicense=accept-securebackup-cookie;" \
@@ -20,6 +16,5 @@ RUN curl -LO -H "Cookie: oraclelicense=accept-securebackup-cookie;" \
     rm -f "jdk-${JAVA_VERSION}u${JAVA_UPDATE}-linux-x64.rpm"
 
 COPY agent.json /etc/aws-kinesis/agent.json
-COPY aws-kinesis-agent-wrapper /usr/local/bin/
 
-CMD /usr/local/bin/aws-kinesis-agent-wrapper -L $LOG_LEVEL -l /dev/stdout
+CMD /usr/bin/start-aws-kinesis-agent -L $LOG_LEVEL -l /dev/stdout

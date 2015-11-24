@@ -19,11 +19,12 @@ variable.)  You can find a table of regional endpoints
 
 Security note
 -------------
-Do not fill in the values for `awsAccessKeyId` and
-`awsSecretAccessKey` in your configuration file.  This could result in your
-credentials being insecurely stored in your version control system.  Instead,
-set the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables
-when launching your container.
+Do not fill in the values for `awsAccessKeyId` and `awsSecretAccessKey` in your
+configuration file.  This could result in your credentials being insecurely
+stored in your version control system.  Instead, set the `AWS_ACCESS_KEY_ID`
+and `AWS_SECRET_ACCESS_KEY` environment variables when launching your
+container, or use IAM role authentication (which is automatic if the variables
+are unset).
 
 Environment variables
 =====================
@@ -33,11 +34,10 @@ The following environment variables are discussed
 * `AWS_ACCESS_KEY_ID`
 * `AWS_SECRET_ACCESS_KEY`
 
+Leave the above variables unset if you wish to use IAM role authentication.
+
 Additional environment variables:
 
-* `AWS_IAM_ROLE`: If set to a valid IAM role name, obtain AWS access
-  credentials using instance metadata.  This can be used in lieu of setting the
-  `AWS`-prefixed environment variables above.
 * `LOG_LEVEL`: Log level. Can be `TRACE`, `DEBUG`, `INFO`, `WARN`, or `ERROR`.  (Default: `INFO`)
 * `JAVA_START_HEAP`: Java initial heap size (default: `32m`)
 * `JAVA_MAX_HEAP`: Java maximum heap size (default: `512m`)
