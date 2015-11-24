@@ -36,3 +36,4 @@ Additional environment variables:
 * `JAVA_BUILD`: Build version of Oracle JDK
 * `JAVA_START_HEAP`: Java initial heap size (default: `32m`)
 * `JAVA_MAX_HEAP`: Java maximum heap size (default: `512m`)
+
