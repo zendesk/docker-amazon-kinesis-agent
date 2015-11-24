@@ -8,6 +8,7 @@ if [ -n "$AWS_IAM_ROLE" ]; then
   fi
   AWS_ACCESS_KEY_ID=$(echo $creds | jq -r .AccessKeyId)
   AWS_SECRET_ACCESS_KEY=$(echo $creds | jq -r .SecretAccessKey)
+  AWS_SESSION_TOKEN=$(echo $creds | jq -r .Token)
   AWS_DEFAULT_REGION=$(curl -sSf http://169.254.169.254/latest/meta-data/placement/availability-zone | sed -e 's/[a-z]$//')
 fi
 
