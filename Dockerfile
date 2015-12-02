@@ -1,7 +1,7 @@
 FROM centos:7
 
 RUN yum -y upgrade && \
-    yum -y install epel-release curl
+    yum -y install curl
 
 ENV JAVA_VERSION=8 \
     JAVA_UPDATE=66 \
